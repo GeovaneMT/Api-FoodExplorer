@@ -1,9 +1,9 @@
 const CreateUserController = require("./users/CreateUserController")
 const UpdateUserController = require("./users/UpdateUserController")
 
-const indexFoodController = require("./foods/indexFoodController")
-const CreateFoodController = require("./foods/CreateFoodsController")
-const UpdateFoodController = require("./foods/UpdateFoodsController")
+const indexFoodsController = require("./foods/indexFoodController")
+const CreateFoodsController = require("./foods/CreateFoodsController")
+const UpdateFoodsController = require("./foods/UpdateFoodsController")
 const ShowFoodsController = require("./foods/ShowFoodsController")
 const DeleteFoodsController = require("./foods/DeleteFoodsController")
 
@@ -37,13 +37,13 @@ class FoodImageController {
 
 class FoodsController {
   async index(request, response) {
-    await indexFoodController(request, response)
+    await indexFoodsController(request, response)
   }
   async create(request, response) {
-    await CreateFoodController(request, response)
+    await CreateFoodsController(request, response)
   }
   async update(request, response) {
-    await UpdateFoodController(request, response)
+    await UpdateFoodsController(request, response)
   }
   async show(request, response) {
     await ShowFoodsController(request, response)
