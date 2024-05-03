@@ -19,22 +19,22 @@ async function CreateFoodsController(request, response) {
 
     // Insert categories
     if (categories && categories.length > 0) {
-      const categoriesInsert = categories.map((category) => {
+      const categoriesInsert = categories.map((CategoryName) => {
         return {
           food_id,
-          category: category,
+          CategoryName,
+          user_id,
         }
       })
       await knex("categories").insert(categoriesInsert)
     }
 
-
     // Insert tags
     if (tags && tags.length > 0) {
-      const tagsInsert = tags.map((name) => {
+      const tagsInsert = tags.map((TagName) => {
         return {
           food_id,
-          name,
+          TagName,
           user_id,
         }
       })

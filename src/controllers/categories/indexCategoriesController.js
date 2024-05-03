@@ -1,6 +1,6 @@
 const knex = require("../../dataBase/knex")
 
-async function indexCategoriesController(request, response) {
+async function indexCategoryController(request, response) {
   console.log("Indexing Categories")
 
   const user_id = request.user.id
@@ -12,4 +12,4 @@ async function indexCategoriesController(request, response) {
   return response.status(200).json(categories)
 }
 
-module.exports = indexCategoriesController
+module.exports = indexCategoryController

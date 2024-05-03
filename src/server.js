@@ -28,7 +28,7 @@ app.use(routes)
 app.use(errorHandler)
 
 // Set the port number
-const PORT = process.env.PORT || 3333
+const PORT = process.env.PORT || 3334
 
 // Start the server
 app.listen(PORT, () => {

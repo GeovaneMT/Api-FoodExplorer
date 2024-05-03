@@ -1,18 +1,18 @@
 exports.up = (knex) =>
   knex.schema.createTable("categories", (table) => {
     table.increments("id")
-    table.text("categoryName").notNullable()
-    
+    table.text("CategoryName").notNullable()
+
     table
       .integer("food_id")
       .references("id")
-      .inTable("notes")
+      .inTable("foods")
       .onDelete("CASCADE")
-    
+
     table
-      .timestamp("created_at")
-      .default(knex.fn.now())
-    
+      .integer("user_id")
+      .references("id")
+      .inTable("users")
   })
-  
-  exports.down = (knex) => knex.schema.dropTable("categories")
+
+exports.down = (knex) => knex.schema.dropTable("categories")
