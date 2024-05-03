@@ -7,9 +7,9 @@ const { AvatarController } = require("../controllers")
 const ensureAuth = require("../middleware/EnsureAuth")
 
 const usersRoutes = Router()
-const upload = multer(uploadConfig.MULTER)
-
 const userController = new UserController()
+
+const upload = multer(uploadConfig.MULTER)
 const avatarController = new AvatarController()
 
 usersRoutes.post("/", userController.create)

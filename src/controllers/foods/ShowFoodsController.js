@@ -14,12 +14,12 @@ async function ShowFoodsController(request, response) {
     }
 
     // Fetch tags
-    const tags = await knex("tags").where({ food_id: id }).orderBy("name")
+    const tags = await knex("tags").where({ food_id: id }).orderBy("TagName")
 
     // Fetch categories
     const categories = await knex("categories")
       .where({ food_id: id })
-      .orderBy("created_at")
+      .orderBy("CategoryName")
 
     console.log("food Showed")
     return response.status(200).json({

@@ -3,7 +3,7 @@ exports.up = (knex) =>
     table.increments("id")
     table.text("name")
     table.text("description")
-    table.integer("price")
+    table.text("price")
     table.string("image")
 
     table
