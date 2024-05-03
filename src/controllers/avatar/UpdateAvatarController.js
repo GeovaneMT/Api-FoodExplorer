@@ -1,4 +1,4 @@
-const AppError = require("../../utils/AppError")
+const { AppError } = require("../../utils/AppError")
 const knex = require("../../dataBase/knex")
 const DiskStorage = require("../../providers/DiskStorage")
 
