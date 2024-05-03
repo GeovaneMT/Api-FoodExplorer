@@ -1,7 +1,7 @@
 const knex = require("../../dataBase/knex")
 
 async function indexFoodController(request, response) {
-  const { name, tags, categories } = request.query
+  const { name, tags, categories, price, image } = request.query
   const user_id = request.user.id
   console.log("Indexing foods")
 
@@ -21,7 +21,6 @@ async function indexFoodController(request, response) {
   }
 
   foods = await query.orderBy("name").select(["foods.id", "foods.name", "foods.user_id"]);
-
 
   const userTags = await knex("tags").where({ user_id })
   const userCategories = await knex("categories").where({ user_id })
