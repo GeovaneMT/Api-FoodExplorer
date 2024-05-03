@@ -1,7 +1,7 @@
 const knex = require('../../dataBase/knex')
 
 async function indexFoodController(request, response) {
-  const { name, tags, categories, price, image } = request.query
+  const { name, tags, categories } = request.query
   const user_id = request.user.id
   console.log('Indexing foods')
 
@@ -34,6 +34,7 @@ async function indexFoodController(request, response) {
       'foods.id',
       'foods.name',
       'foods.price',
+      'foods.image',
       'foods.description',
       'foods.user_id',
     ])
