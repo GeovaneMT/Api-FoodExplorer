@@ -1,10 +1,10 @@
 exports.up = (knex) =>
   knex.schema.createTable("categories", (table) => {
     table.increments("id")
-    table.text("url").notNullable()
+    table.text("categoryName").notNullable()
     
     table
-      .integer("note_id")
+      .integer("food_id")
       .references("id")
       .inTable("notes")
       .onDelete("CASCADE")

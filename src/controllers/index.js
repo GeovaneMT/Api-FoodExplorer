@@ -8,6 +8,7 @@ const ShowFoodsController = require("./foods/ShowFoodsController")
 const DeleteFoodsController = require("./foods/DeleteFoodsController")
 
 const indexTagController = require("./tags/indexTagController")
+const indexCategoriesController = require("./categories/indexCategoriesController")
 
 const createSessionController = require("./sessions/createSessionController")
 
@@ -58,6 +59,12 @@ class TagsController {
   }
 }
 
+class CategoriesController {
+  async index(request, response) {
+    await indexCategoriesController(request, response)
+  }
+}
+
 class SessionsController {
   async create(request, response) {
     await createSessionController(request, response)
@@ -68,6 +75,7 @@ module.exports = {
   UserController,
   FoodsController,
   TagsController,
+  CategoriesController,
   SessionsController,
   AvatarController,
   FoodImageController

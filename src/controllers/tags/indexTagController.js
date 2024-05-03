@@ -6,7 +6,7 @@ async function indexTagController(request, response) {
   const user_id = request.user.id
   const tags = await knex("tags")
     .where({ user_id })
-    .groupBy("name")
+    .groupBy("Tagname")
 
   console.log("Tags Indexed")
   return response.status(200).json(tags)
